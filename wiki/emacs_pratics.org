@@ -7,25 +7,25 @@
 :EXPORT_FILE_NAME: org-mode
 :END:
 ** org的配置项custom
-  * 树的结尾空格分隔行数
+  * 树的结尾空格分隔行数 ::
     在子树的末尾的空行,被认为是子树的一部分,它会随着子树的折叠而被隐藏. 然而,如果你放了两个空行,那么在折叠这个子树的时候,还会有一个空行是可见的,这样做的目的常常是为了构造分割的视图. 要改变这种行为,需要配置变量'org-cycle-separator-lines'
 ** org可见性的转移
    * S-<TAB> / C-u <TAB> (org-global-cycle) :: 全局循环:使整个缓存区在在不同状态间切换
-        #+BEGIN_EXAMPLE
-         ,-> OVERVIEW -> CONTENTS -> SHOW ALL --.
-        '--------------------------------------'
+     #+BEGIN_EXAMPLE
+     ,-> OVERVIEW -> CONTENTS -> SHOW ALL --.
+     '--------------------------------------'
         #+END_EXAMPLE
-        若再S-<TAB>前加了一个数字前缀N,那么CPMTEMTS一直到第N个层次的内容都会显示出来. 需要注意的是,若是在编辑表格中,S-<TAB>的作用是跳到上一个域.
+     若再S-<TAB>前加了一个数字前缀N,那么CPMTEMTS一直到第N个层次的内容都会显示出来. 需要注意的是,若是在编辑表格中,S-<TAB>的作用是跳到上一个域.
    * outline-show-all ::
-        显示所有信息,包括'抽屉'内的信息
+     显示所有信息,包括'抽屉'内的信息
    * C-c C-r (org-reveal) ::
-        显示光标周围的上下文,也就是显示当前条目,以及所有上层标题. Useful for working near a location that has been exposed by a sparse tree command (see section Sparse trees) or an agenda command (see section Commands in the agenda buffer). With a prefix argument show, on each level, all sibling headings. With a double prefix argument, also show the entire subtree of the parent.
+     显示光标周围的上下文,也就是显示当前条目,以及所有上层标题. Useful for working near a location that has been exposed by a sparse tree command (see section Sparse trees) or an agenda command (see section Commands in the agenda buffer). With a prefix argument show, on each level, all sibling headings. With a double prefix argument, also show the entire subtree of the parent.
    * C-c C-k (outline-show-branches) ::
-        进入展开所有子树的标题的视图,不管当前是什么展开方式.
+     进入展开所有子树的标题的视图,不管当前是什么展开方式.
    * C-c C-k (show-branches) ::
-        展开所有子树的标题,如果只有一个子树,那么内容也显示出来.
+     展开所有子树的标题,如果只有一个子树,那么内容也显示出来.
    * org-tree-to-indirect-buffer ::
-        把当前子树显示在indirect buffer中. 如果加了一个前缀参数N,它会向下进入地N层子树并在indirect buffer中显示该子树. 如果N是负数,那么就是向上进入N层的父节点. 如果命令执行前加了C-u前缀,则打开新的indirect buffer,而不会关闭之前打开的indirect buffer.
+     把当前子树显示在indirect buffer中. 如果加了一个前缀参数N,它会向下进入地N层子树并在indirect buffer中显示该子树. 如果N是负数,那么就是向上进入N层的父节点. 如果命令执行前加了C-u前缀,则打开新的indirect buffer,而不会关闭之前打开的indirect buffer.
    * C-c M-w org-copy ::
      像org-file一样拷贝subtree
    * C-u C-u TAB ::
@@ -33,7 +33,6 @@
      注意切换buffer是不会初始化的,必须kill了重开.
 ** org项目的移动
    下面的命令跳转到buffer中的其他标题
-   * 已经熟悉的
     * C-c C-n (outline-next-visible-heading) ::
      下一个标题
     * C-c C-p (outline-previous-visible-heading) ::
@@ -43,23 +42,23 @@
     * C-c C-b (org-backward-same-level) ::
         同一级的上一个标题
 
-   * C-c C-u (outline-up-heading) ::
+    * C-c C-u (outline-up-heading) ::
         回到上一级标题
-   * C-c C-j (org-goto) ::
-        跳转到其他位置的同时不改变当前大纲的可见性. 在一个临时buffer中显示文档的结构,在这个临时buffer中你可以使用下面的快捷键来定位:
-        #+BEGIN_EXAMPLE
-        <TAB>           切换可见性
-        <down> / <up>   下一个/上一个可见的标题
-        <RET>           选定当前位置
-        /               在树中作一个匹配查询
-        如果你关掉了org-goto-auto-isearch选项,下面这些快捷键才可用
-        n / p           下一个/上一个可见的标题
-        f / b           同级别的上一个/下一个标题
-        u               回到上一级标题
-        0-9             数字参数
-        q               退出这个临时buffer
+    * C-c C-j (org-goto) ::
+         跳转到其他位置的同时不改变当前大纲的可见性. 在一个临时buffer中显示文档的结构,在这个临时buffer中你可以使用下面的快捷键来定位:
+         #+BEGIN_EXAMPLE
+         <TAB>           切换可见性
+         <down> / <up>   下一个/上一个可见的标题
+         <RET>           选定当前位置
+         /               在树中作一个匹配查询
+         如果你关掉了org-goto-auto-isearch选项,下面这些快捷键才可用
+         n / p           下一个/上一个可见的标题
+         f / b           同级别的上一个/下一个标题
+         u               回到上一级标题
+         0-9             数字参数
+         q               退出这个临时buffer
         #+END_EXAMPLE
-        参见变量'org-goto-interface'
+         参见变量'org-goto-interface'
 
 * emacs的操作
    * buffer的切换
